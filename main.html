@@ -1,198 +1,190 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<script src="util.js"></script>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/JavaScript" src="util.js"></script>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
 <body>
-
 
 <h2 class="text-center">体检后有关问题的建议</h2>
 
-<ul class="unstyled">
-<ul class="inline">
-	<li>姓名： <input class="input-mini" style="text-align:center;" type="text"></li>
-	<li>性别： <input class="input-mini" style="text-align:center;" type="text"></li>
-	<li>年龄： <input class="input-mini" style="text-align:center;" type="text"></li>
-</ul>
+<!-- basic info -->
+<div>
+	姓名： <input class="input-mini" style="text-align:center;" type="text">
+	性别： <input class="input-mini" style="text-align:center;" type="text">
+	年龄： <input class="input-mini" style="text-align:center;" type="text">
+</div>
 
-</ul>
-
-<ul class="inline">
-	<li>1. 您本次体检测体重指数：<input input class="input-mini" type="text" style="text-align:center;" id="weight" onkeydown="if (event.keyCode == 13) document.getElementById('btnWeight').click()" />
+<div>
+	1. 您本次体检测体重指数：<input input class="input-mini" type="text" style="text-align:center;" id="weight" onkeydown="if (event.keyCode == 13) document.getElementById('btnWeight').click()" />
 		<span style="DISPLAY:none">
-		<button id="btnWeight" onclick="getWeight()">Try it</button>
+			<button id="btnWeight" onclick="getWeight()">Try it</button>
 		</span>
-	</li>
-	<li><strong><p id="weightRes"></p></strong></li>
-</ul>
+	<strong><p id="weightRes"></p></strong>
+</div>
 
-<ul class="inline">
-	<li>2. 您本次体检测血压：<input class="input-mini" style="text-align:center;" type="text" id="bldpressure" onkeydown="if (event.keyCode == 13) document.getElementById('btnBldpressure').click()" /> mmHg，正常高值血压135--139/85--89mmHg。
-<span style="DISPLAY:none">
-<button id="btnBldpressure" onclick="getBldpressure()">Try it</button></span>
-	</li>
-	<li><strong><p id="bldpressureRes"></p></strong></li>
-</ul>
+<div>
+	2. 您本次体检测血压：<input class="input-mini" style="text-align:center;" type="text" id="bldpressure" onkeydown="if (event.keyCode == 13) document.getElementById('btnBldpressure').click()" /> mmHg，正常高值血压135--139/85--89mmHg。
+	<span style="DISPLAY:none">
+		<button id="btnBldpressure" onclick="getBldpressure()">Try it</button></span>
+	</span>
+	<strong><p id="bldpressureRes"></p></strong>
+</div>
 
-<ul class="inline">
-	<li>3. 您本次体检测空腹血糖：<input class="input-mini" style="text-align:center;" type="text" id="bldsugar" onkeydown="if (event.keyCode == 13) document.getElementById('btnBldsugar').click()" /> mmol/L，空腹血糖正常值3.9~6.1 mmol/L。（如原有糖尿病病史，应积极治疗。）
-<span style="DISPLAY:none">
-<button id="btnBldsugar" onclick="getBldsugar()">Try it</button>
-</span>
-	</li>
-    <li><strong><p id="bldsugarRes"></p></strong></li>
-</ul>
+<div>
+	3. 您本次体检测空腹血糖：<input class="input-mini" style="text-align:center;" type="text" id="bldsugar" onkeydown="if (event.keyCode == 13) document.getElementById('btnBldsugar').click()" /> mmol/L，空腹血糖正常值3.9~6.1 mmol/L。（如原有糖尿病病史，应积极治疗。）
+	<span style="DISPLAY:none">
+		<button id="btnBldsugar" onclick="getBldsugar()">Try it</button>
+	</span>
+	<strong><p id="bldsugarRes"></p></strong>
+</div>
 
-<ul class="inline">
-	<li><p>4. 您本次体检测血脂四项：</p>
+<div>
+	<p>4. 您本次体检测血脂四项：</p>
 总胆固醇<input class="input-mini" style="text-align:center;" type="text" id="zongdgc" onkeydown="if (event.keyCode == 13) document.getElementById('btnZongDGC').click()" /> mmol/L
 <span style="DISPLAY:none">
 <button id="btnZongDGC" onclick="getZongDGC()">Try it</button>
 </span>
-	</li>
-	<li><strong><p id="zongdgcRes"></p></strong></li>
-	<li>甘油三酯<input input class="input-mini" style="text-align:center;" type="text" id="gysz" onkeydown="if (event.keyCode == 13) document.getElementById('btnGYSZ').click()" />mmol/L
+	<strong><p id="zongdgcRes"></p></strong>
+	甘油三酯<input input class="input-mini" style="text-align:center;" type="text" id="gysz" onkeydown="if (event.keyCode == 13) document.getElementById('btnGYSZ').click()" />mmol/L
 <span style="DISPLAY:none">
 <button id="btnGYSZ" onclick="getGYSZ()">Try it</button>
 </span>
-	</li>
-	<li><strong><p id="gyszRes"></p></strong></li>
-</ul>
-<ul class="inline">
-	<li>低密度脂蛋白胆固醇<input input class="input-mini" style="text-align:center;" type="text" id="didgc" onkeydown="if (event.keyCode == 13) document.getElementById('btnDiDGC').click()" />mmol/L
-<span style="DISPLAY:none">
-<button id="btnDiDGC" onclick="getDiDGC()">Try it</button>
-</span>
-	</li>
-	<li><strong><p id="didgcRes"></p></strong></li>
-<li>高密度脂蛋白胆固醇<input input class="input-mini" style="text-align:center;" type="text" id="gaodgc" onkeydown="if (event.keyCode == 13) document.getElementById('btnGaoDGC').click()" />mmol/L
-<span style="DISPLAY:none">
-<button id="btnGaoDGC" onclick="getGaoDGC()">Try it</button>
-</span>
-	</li>
-	<li><strong><p id="gaodgcRes"></p></strong></li>
-</ul>
-<ul>
-<p>若有异常，请参考以下建议：
-①低脂肪、低胆固醇饮食。   ②禁酒              ③控制体重（超标者应减体重）。 
-④适当增加身体锻炼。       ⑤必要时服降脂药。   ⑥有糖尿病者，应控制糖尿病。
-</p>
-</ul>
+	<strong><p id="gyszRes"></p></strong>
+</div>
 
-<ul class="inline">
-	<li><p>5. 您本次体检丙氨酸氨基转氨酶:  检测数值：<input input class="input-mini" style="text-align:center;" type="text" id="gbzam" onkeydown="if (event.keyCode == 13) document.getElementById('btnGBZAM').click()" /> 单位</p>
+<div>
+	低密度脂蛋白胆固醇<input input class="input-mini" style="text-align:center;" type="text" id="didgc" onkeydown="if (event.keyCode == 13) document.getElementById('btnDiDGC').click()" />mmol/L
+	<span style="DISPLAY:none">
+		<button id="btnDiDGC" onclick="getDiDGC()">Try it</button>
+	</span>
+	<strong><p id="didgcRes"></p></strong>
+	高密度脂蛋白胆固醇<input input class="input-mini" style="text-align:center;" type="text" id="gaodgc" onkeydown="if (event.keyCode == 13) document.getElementById('btnGaoDGC').click()" />mmol/L
+	<span style="DISPLAY:none">
+		<button id="btnGaoDGC" onclick="getGaoDGC()">Try it</button>
+	</span>
+	<strong><p id="gaodgcRes"></p></strong>
+</div>
+
+<div>
+	<p>
+		若有异常，请参考以下建议：①低脂肪、低胆固醇饮食。②禁酒 ③控制体重（超标者应减体重）。④适当增加身体锻炼。⑤必要时服降脂药。⑥有糖尿病者，应控制糖尿病。
+	</p>
+</div>
+
+<div>
+	<p>5. 您本次体检丙氨酸氨基转氨酶:  检测数值：<input input class="input-mini" style="text-align:center;" type="text" id="gbzam" onkeydown="if (event.keyCode == 13) document.getElementById('btnGBZAM').click()" /> 单位</p>
 <span style="DISPLAY:none">
 <button id="btnGBZAM" onclick="getGBZAM()">Try it</button>
 </span>
-	</li>
-	<li><strong><p id="gbzamRes"></p></strong></li>
-    <li><strong><p id="gbzamRes1"></p></strong></li>
-</ul>
+	<strong><p id="gbzamRes"></p></strong>
+    <strong><p id="gbzamRes1"></p></strong>
+</div>
 
-<ul class="inline">
-	<li><p>6.  您本次体检<strong>C-反应蛋白</strong>（CRP）:</p></li>
-  	<li><label><input type="checkbox" name="CheckboxGroup2" value="checkbox" id="CheckboxGroup2_0" >正常</label><li>
-  	<li><label><input type="checkbox" name="CheckboxGroup2" value="checkbox" id="CheckboxGroup2_1" onclick="OnChangeCheckbox(this, 'fydb')">异常</label></li>
-</ul>
-<ul><strong><p id='fydb'></p></strong></ul>
+<div>
+	<p>6.  您本次体检<strong>C-反应蛋白</strong>（CRP）:</p>
+  	<label><input type="checkbox" name="CheckboxGroup2" value="checkbox" id="CheckboxGroup2_0" >正常</label>
+  	<label><input type="checkbox" name="CheckboxGroup2" value="checkbox" id="CheckboxGroup2_1" onclick="OnChangeCheckbox(this, 'fydb')">异常</label>
+</div>
+<div><strong><p id='fydb'></p></strong></div>
  
-<ul class="inline">
-	<li><p>7. 您本次体检：</p></li>
-	<li><strong>尿素</strong>：</li>
-	<li><label><input type="checkbox" name="CheckboxGroup5" value="checkbox" id="CheckboxGroup5_0">
-    正常</label></li>
-  	<li><label><input type="checkbox" name="CheckboxGroup5" value="checkbox" id="CheckboxGroup5_1" onclick="OnChangeCheckbox(this, 'niaosu')">
-    异常</label></li>
-</ul>
-<ul><strong><p id="niaosu"></p></strong></li>
-</ul>
-<ul class="inline">
-  <li><strong>肌酐</strong>：</li>
-  <li><label>
-    <input type="checkbox" name="CheckboxGroup6" value="checkbox" id="CheckboxGroup6_0" >
-    正常</label></li>
-  <li><label>
-    <input type="checkbox" name="CheckboxGroup6" value="checkbox" id="CheckboxGroup6_1" onclick="OnChangeCheckbox(this, 'jigan')">
-    异常</label></li>
-</ul>
-<ul><strong><p id="jigan"></p></strong>
-</ul>
-<ul class="inline">
-  <li><strong>尿酸</strong>：</li>
-  <li><label>
-    <input type="checkbox" name="CheckboxGroup7" value="checkbox" id="CheckboxGroup7_0">
-    正常</label></li>
-  <li><label>
-    <input type="checkbox" name="CheckboxGroup7" value="checkbox" id="CheckboxGroup7_1" onclick="OnChangeCheckbox(this, 'niaosuan')">
-    异常</label></li>
-</ul>
-<ul><strong><p id="niaosuan"></p></strong>
-</ul>
+<div>
+	<p>7. 您本次体检：</p>
+	<strong>尿素</strong>：
+	<label><input type="checkbox" name="CheckboxGroup5" value="checkbox" id="CheckboxGroup5_0">
+    正常</label>
+  	<label><input type="checkbox" name="CheckboxGroup5" value="checkbox" id="CheckboxGroup5_1" onclick="OnChangeCheckbox(this, 'niaosu')">
+    异常</label>
+</div>
+<div><strong><p id="niaosu"></p></strong>
+</div>
 
-<ul class="inline">
-<li>8. 甲状腺触诊：</li>
-	<li>
+<div>
+  <strong>肌酐</strong>：
   <label>
+    <input type="checkbox" name="CheckboxGroup6" value="checkbox" id="CheckboxGroup6_0" >
+    正常</label>
+  <label>
+    <input type="checkbox" name="CheckboxGroup6" value="checkbox" id="CheckboxGroup6_1" onclick="OnChangeCheckbox(this, 'jigan')">
+    异常</label>
+</div>
+<div><strong><p id="jigan"></p></strong>
+</div>
+
+<div>
+  <strong>尿酸</strong>：
+  <label>
+    <input type="checkbox" name="CheckboxGroup7" value="checkbox" id="CheckboxGroup7_0">
+    正常</label>
+  <label>
+    <input type="checkbox" name="CheckboxGroup7" value="checkbox" id="CheckboxGroup7_1" onclick="OnChangeCheckbox(this, 'niaosuan')">
+    异常</label>
+</div>
+<div><strong><p id="niaosuan"></p></strong>
+</div>
+
+<div>
+	8. 甲状腺触诊：
+  	<label>
     <input type="checkbox" name="CheckboxGroup1" value="checkbox" id="CheckboxGroup1_0">
     正常</label>
-	</li>
-	<li><label>
+	<label>
     <input type="checkbox" name="CheckboxGroup1" value="checkbox" id="CheckboxGroup1_1" onClick="OnChangeCheckbox(this, 'jzx')">
     异常</label>
-    </li>
-<li><p id="jzx"> </p></li>
-</ul>
+	<p id="jzx"> </p>
+</div>
 
-
-<ul class="inline">
-    <li>9. 您本次体检的心电图结果</li>
-	<li>
+<div>
+    9. 您本次体检的心电图结果
+	
   	<label>
     <input type="checkbox" name="CheckboxGroup8" value="checkbox" id="CheckboxGroup8_0">
     正常</label>
-	</li>
-	<li>
+	
+	
   	<label>
     <input type="checkbox" name="CheckboxGroup8" value="checkbox" id="CheckboxGroup8_1" onClick="OnChangeCheckbox(this, 'xdt')">
     异常</label>
-	</li>
-</ul>
-<ul><p id="xdt"></p></ul>
+	
+</div>
+<div><p id="xdt"></p></div>
 
-<ul class="inline">
-	<li>10. 您本次体检B超提示： </li>
-	<li>
+<div>
+	10. 您本次体检B超提示： 
+	
   	<label>
     <input type="checkbox" name="CheckboxGroup_xz" value="checkbox" id="CheckboxGroup_xz_0">
     肝胆脾胰双肾未见异常</label>
-	</li>
-    <li>
+	
+    
   	<label>
     <input type="checkbox" name="CheckboxGroup_xz" value="checkbox" id="CheckboxGroup_xz_1" onClick="OnChangeCheckbox(this, 'xzUn')">
     异常</label>
-    </li>
-</ul>
+    
+</div>
+<div><p id="xzUn"></p></div>
 
-<p id="xzUn"></p>
+<div>
+B超检查其他情况：<textarea class="input-xxlarge"></textarea>
+</div>
 
+<div>
+您本次体检的其他问题： <textarea class="input-xxlarge"></textarea>
+</div>
 
-<ul class="inline">
-<li>B超检查其他情况：<textarea class="input-xxlarge"></textarea></li>
-</ul>
-
-<ul class="inline">
-<li>您本次体检的其他问题： <textarea class="input-xxlarge"></textarea></li>
-</ul>
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p class="text-right">青云职工医院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p class="text-right"><script language="JavaScript" type="text/JavaScript">var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
-if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = yyyy+' - '+mm+' - '+dd;
-document.write(today);
-</script>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<div>
+	<p class="text-right">青云职工医院</p>
+	<p class="text-right">
+		<script language="JavaScript" type="text/JavaScript">
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth()+1; //January is 0!
+			var yyyy = today.getFdivlYear();
+			if(dd<10) {dd='0'+dd} if(mm<10){mm='0'+mm} today = yyyy+' - '+mm+' - '+dd;
+			document.write(today);
+		</script>
+	</p>
+</div>
 </body>
 </html>
