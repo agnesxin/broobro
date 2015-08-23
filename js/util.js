@@ -25,6 +25,7 @@ function OnChangeCheckbox(checkbox, id) {
 }
 
 function generateCSV() {
+	var name = document.getElementById()
 }
 
 //weight
