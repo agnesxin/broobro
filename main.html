@@ -96,9 +96,9 @@
 <div>
 	7. 您本次体检：
 	<strong>尿素</strong>：
-	<label><input type="radio" name="CheckboxGroup5" value="正常" id="niaosuRadio">
+	<label><input type="radio" name="CheckboxGroup5" value="正常" id="niaosuRadio" onclick="OnChangeCheckbox(this, 'niaosu', true)">
     正常</label>
-  	<label><input type="radio" name="CheckboxGroup5" value="异常" id="niaosuRadio" onclick="OnChangeCheckbox(this, 'niaosu')">
+  	<label><input type="radio" name="CheckboxGroup5" value="异常" id="niaosuRadio" onclick="OnChangeCheckbox(this, 'niaosu', false)">
     异常</label>
 </div>
 <div><strong><p id="niaosu"></p></strong>
@@ -107,10 +107,10 @@
 <div>
   <strong>肌酐</strong>：
   <label>
-    <input type="radio" name="CheckboxGroup6" value="正常" id="jiganRadio" >
+    <input type="radio" name="CheckboxGroup6" value="正常" id="jiganRadio" onclick="OnChangeCheckbox(this, 'jigan', true)">
     正常</label>
   <label>
-    <input type="radio" name="CheckboxGroup6" value="异常" id="jiganRadio" onclick="OnChangeCheckbox(this, 'jigan')">
+    <input type="radio" name="CheckboxGroup6" value="异常" id="jiganRadio" onclick="OnChangeCheckbox(this, 'jigan', false)">
     异常</label>
 </div>
 <div><strong><p id="jigan"></p></strong>
@@ -119,10 +119,10 @@
 <div>
   <strong>尿酸</strong>：
   <label>
-    <input type="radio" name="CheckboxGroup7" value="正常" id="niaosuanRadio">
+    <input type="radio" name="CheckboxGroup7" value="正常" id="niaosuanRadio" onclick="OnChangeCheckbox(this, 'niaosuan', true)">
     正常</label>
   <label>
-    <input type="radio" name="CheckboxGroup7" value="异常" id="niaosuanRadio" onclick="OnChangeCheckbox(this, 'niaosuan')">
+    <input type="radio" name="CheckboxGroup7" value="异常" id="niaosuanRadio" onclick="OnChangeCheckbox(this, 'niaosuan', false)">
     异常</label>
 </div>
 <div><strong><p id="niaosuan"></p></strong>
@@ -131,10 +131,10 @@
 <div>
 	8. 甲状腺触诊：
   	<label>
-    <input type="radio" name="CheckboxGroup1" value="正常" id="jzxRadio">
+    <input type="radio" name="CheckboxGroup1" value="正常" id="jzxRadio" onClick="OnChangeCheckbox(this, 'jzx', true)">
     正常</label>
 	<label>
-    <input type="radio" name="CheckboxGroup1" value="异常" id="jzxRadio" onClick="OnChangeCheckbox(this, 'jzx')">
+    <input type="radio" name="CheckboxGroup1" value="异常" id="jzxRadio" onClick="OnChangeCheckbox(this, 'jzx', false)">
     异常</label>
 	<p id="jzx"> </p>
 </div>
@@ -143,12 +143,12 @@
     9. 您本次体检的心电图结果
 	
   	<label>
-    <input type="radio" name="CheckboxGroup8" value="正常" id="xdtRadio">
+    <input type="radio" name="CheckboxGroup8" value="正常" id="xdtRadio" onClick="OnChangeCheckbox(this, 'xdt', true)">
     正常</label>
 	
 	
   	<label>
-    <input type="radio" name="CheckboxGroup8" value="异常" id="xdtRadio" onClick="OnChangeCheckbox(this, 'xdt')">
+    <input type="radio" name="CheckboxGroup8" value="异常" id="xdtRadio" onClick="OnChangeCheckbox(this, 'xdt', false)">
     异常</label>
 	
 </div>
@@ -158,11 +158,11 @@
 	10. 您本次体检B超提示： 
 	
   	<label>
-    <input type="radio" name="CheckboxGroup_xz" value="肝胆脾胰双肾未见异常" id="xzUnRadio">
+    <input type="radio" name="CheckboxGroup_xz" value="肝胆脾胰双肾未见异常" id="xzUnRadio" onClick="OnChangeCheckbox(this, 'xzUn', true)">
     肝胆脾胰双肾未见异常</label>
     
   	<label>
-    <input type="radio" name="CheckboxGroup_xz" value="异常" id="xzUnRadio" onClick="OnChangeCheckbox(this, 'xzUn')">
+    <input type="radio" name="CheckboxGroup_xz" value="异常" id="xzUnRadio" onClick="OnChangeCheckbox(this, 'xzUn', false)">
     异常</label>
 </div>
 <div><p id="xzUn"></p></div>
