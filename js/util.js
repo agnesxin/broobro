@@ -15,10 +15,56 @@ var checkboxMsgMap = {
 	"shenjieshi": '&bull; 肾结石： 左侧，大小<input class="input-mini" style="text-align:center;" type="text">cm； 右侧，大小<input class="input-mini" style="text-align:center;" type="text">cm<strong>建议：①观察，定期复诊； ②多饮水、运动； ③药物治疗； ④必要时专科处理。</strong>',
 	"shennangzhong": '&bull; 肾脏囊肿：左侧，大小<input class="input-mini" style="text-align:center;" type="text">cm； 右侧，大小<input  class="input-mini" style="text-align:center;" type="text">cm<strong>①观察，目前不需要处理②≥5cm需专科处理。</strong>',
 	"xzUn": '肝脏异常项：<label><input type="checkbox" name="CheckboxGroup3" value="checkbox" id="CheckboxGroup3_0" onClick="OnChangeCheckbox(this, \'zhifanggan\')">脂肪肝</label><label><input type="checkbox" name="CheckboxGroup3" value="checkbox" id="CheckboxGroup3_1" onClick="OnChangeCheckbox(this, \'gnghz\')">肝内钙化灶</label><label><input type="checkbox" name="CheckboxGroup3" value="checkbox" id="CheckboxGroup3_2" onClick="OnChangeCheckbox(this, \'gannangzhong\')">肝囊肿</label></p><p id="zhifanggan"></p><p id="gnghz"></p><p id="gannangzhong"></p>胆囊：<label><input type="checkbox" name="CheckboxGroup4" value="checkbox" id="CheckboxGroup4_0" onClick="OnChangeCheckbox(this, \'danjieshi\')">胆囊结石</label><label><input type="checkbox" name="CheckboxGroup4" value="checkbox" id="CheckboxGroup4_1" onClick="OnChangeCheckbox(this, \'danzenghou\')">胆囊壁增厚性改变</label><label><input type="checkbox" name="CheckboxGroup4" value="checkbox" id="CheckboxGroup4_2" onClick="OnChangeCheckbox(this, \'danxirou\')">胆囊壁息肉样改变</label><label><input type="checkbox" name="CheckboxGroup4" value="checkbox" id="CheckboxGroup4_3" onClick="OnChangeCheckbox(this, \'danqiechu\')">胆囊术后</label><p id="danjieshi"></p><p id="danzenghou"></p><p id="danxirou"></p><p id="danqiechu"></p>肾脏异常项： <label><input type="checkbox" name="CheckboxGroup11" value="checkbox" id="CheckboxGroup11_0" onClick="OnChangeCheckbox(this, \'shenjieshi\')">肾结石</label><label><input type="checkbox" name="CheckboxGroup11" value="checkbox" id="CheckboxGroup11_1" onClick="OnChangeCheckbox(this, \'shennangzhong\')">肾脏囊肿</label><p id="shenjieshi"></p><p id="shennangzhong"></p>'
-}
+};
 
 function OnChangeCheckbox(checkbox, id) {
 	document.getElementById(id).innerHTML = checkbox.checked ? checkboxMsgMap[id] : "";
+}
+
+function generateCSV() {
+	var name = document.getElementById("name").value;
+	var gender = document.getElementById("gender").value;
+	var age = document.getElementById("age").value;
+	var weight = document.getElementById("weight").value;
+	var bldpressure = document.getElementById("bldpressure").value;
+	var bldsugar = document.getElementById("bldsugar").value;
+	var zongdgc = document.getElementById("zongdgc").value;
+	var gysz = document.getElementById("gysz").value;
+	var didgc = document.getElementById("didgc").value;
+	var gaodgc = document.getElementById("gaodgc").value;
+	var gbzam = document.getElementById("gbzam").value;
+	var fydb = $('input[id="fydbRadio"]:checked').val();
+	var niaosu = $('input[id="niaosuRadio"]:checked').val();
+	var jigan = $('input[id="jiganRadio"]:checked').val();
+	var jzx = $('input[id="jzxRadio"]:checked').val();
+	var xdt = $('input[id="xdtRadio"]:checked').val();
+	var xzUn = $('input[id="xzUnRadio"]:checked').val();
+	var bultrasound = $('textarea[id="bultrasound"]').val();
+	var others = $('textarea[id="others"]').val();
+
+	var result = {
+		"name": name,
+		"gender": gender,
+		"age": age,
+		"weight": weight,
+		"bldpressure": bldpressure,
+		"bldsugar": bldsugar,
+		"zongdgc": zongdgc,
+		"gysz": gysz,
+		"didgc": didgc,
+		"gaodgc": gaodgc,
+		"gbzam": gbzam,
+		"fydb": fydb,
+		"niaosu": niaosu,
+		"jigan": jigan,
+		"jzx": jzx,
+		"xdt": xdt,
+		"xzUn": xzUn,
+		"bultrasound": bultrasound,
+		"others": others
+	};
+
+	console.log(result);
 }
 
 //weight
@@ -101,7 +147,7 @@ function getZongDGC() {
 	document.getElementById("zongdgcRes").innerHTML=res;
 }
 
-//甘油三酯
+//甘油三酯 
 function getGYSZ() {
 	var res;
 	var v=document.getElementById("gysz").value;
