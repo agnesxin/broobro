@@ -11,9 +11,9 @@
 
 <!-- basic info -->
 <div>
-	姓名： <input class="input-mini" style="text-align:center;" type="text">
-	性别： <input class="input-mini" style="text-align:center;" type="text">
-	年龄： <input class="input-mini" style="text-align:center;" type="text">
+	姓名：<input class="input-mini" style="text-align:center;" type="text">
+	性别：<input class="input-mini" style="text-align:center;" type="text">
+	年龄：<input class="input-mini" style="text-align:center;" type="text">
 </div>
 
 <div>
@@ -41,7 +41,7 @@
 </div>
 
 <div>
-	<p>4. 您本次体检测血脂四项：</p>
+	4. 您本次体检测血脂四项：
 总胆固醇<input class="input-mini" style="text-align:center;" type="text" id="zongdgc" onkeydown="if (event.keyCode == 13) document.getElementById('btnZongDGC').click()" /> mmol/L
 <span style="DISPLAY:none">
 <button id="btnZongDGC" onclick="getZongDGC()">Try it</button>
@@ -52,9 +52,6 @@
 <button id="btnGYSZ" onclick="getGYSZ()">Try it</button>
 </span>
 	<strong><p id="gyszRes"></p></strong>
-</div>
-
-<div>
 	低密度脂蛋白胆固醇<input input class="input-mini" style="text-align:center;" type="text" id="didgc" onkeydown="if (event.keyCode == 13) document.getElementById('btnDiDGC').click()" />mmol/L
 	<span style="DISPLAY:none">
 		<button id="btnDiDGC" onclick="getDiDGC()">Try it</button>
@@ -74,7 +71,7 @@
 </div>
 
 <div>
-	<p>5. 您本次体检丙氨酸氨基转氨酶:  检测数值：<input input class="input-mini" style="text-align:center;" type="text" id="gbzam" onkeydown="if (event.keyCode == 13) document.getElementById('btnGBZAM').click()" /> 单位</p>
+	5. 您本次体检丙氨酸氨基转氨酶:  检测数值：<input input class="input-mini" style="text-align:center;" type="text" id="gbzam" onkeydown="if (event.keyCode == 13) document.getElementById('btnGBZAM').click()" /> 单位
 <span style="DISPLAY:none">
 <button id="btnGBZAM" onclick="getGBZAM()">Try it</button>
 </span>
@@ -83,14 +80,15 @@
 </div>
 
 <div>
-	<p>6.  您本次体检<strong>C-反应蛋白</strong>（CRP）:</p>
-  	<label><input type="checkbox" name="CheckboxGroup2" value="checkbox" id="CheckboxGroup2_0" >正常</label>
-  	<label><input type="checkbox" name="CheckboxGroup2" value="checkbox" id="CheckboxGroup2_1" onclick="OnChangeCheckbox(this, 'fydb')">异常</label>
+	6.  您本次体检同型半胱氨酸: <input input class="input-mini" style="text-align:center;" type="text" id="bzas" onkeydown="if (event.keyCode == 13) document.getElementById('btnBZAS').click()" />， 正常值 0-15。
+<span style="DISPLAY:none">
+<button id="btnBZAS" onclick="getBZAS()">Try it</button>
+</span>
+	<strong><p id="bzasRes"></p></strong>
 </div>
-<div><strong><p id='fydb'></p></strong></div>
  
 <div>
-	<p>7. 您本次体检：</p>
+	7. 您本次体检：
 	<strong>尿素</strong>：
 	<label><input type="checkbox" name="CheckboxGroup5" value="checkbox" id="CheckboxGroup5_0">
     正常</label>
@@ -180,7 +178,7 @@ B超检查其他情况：<textarea class="input-xxlarge"></textarea>
 			var today = new Date();
 			var dd = today.getDate();
 			var mm = today.getMonth()+1; //January is 0!
-			var yyyy = today.getFdivlYear();
+			var yyyy = today.getFullYear();
 			if(dd<10) {dd='0'+dd} if(mm<10){mm='0'+mm} today = yyyy+' - '+mm+' - '+dd;
 			document.write(today);
 		</script>
