@@ -18,14 +18,20 @@ var checkboxMsgMap = {
 	"xzUn": '肝脏异常项：<label><input type="checkbox" name="CheckboxGroup3" value="checkbox" id="CheckboxGroup3_0" onClick="OnChangeCheckbox(this, \'zhifanggan\')">脂肪肝</label><label><input type="checkbox" name="CheckboxGroup3" value="checkbox" id="CheckboxGroup3_1" onClick="OnChangeCheckbox(this, \'gnghz\')">肝内钙化灶</label><label><input type="checkbox" name="CheckboxGroup3" value="checkbox" id="CheckboxGroup3_2" onClick="OnChangeCheckbox(this, \'gannangzhong\')">肝囊肿</label></p><p id="zhifanggan"></p><p id="gnghz"></p><p id="gannangzhong"></p>胆囊：<label><input type="checkbox" name="CheckboxGroup4" value="checkbox" id="CheckboxGroup4_0" onClick="OnChangeCheckbox(this, \'danjieshi\')">胆囊结石</label><label><input type="checkbox" name="CheckboxGroup4" value="checkbox" id="CheckboxGroup4_1" onClick="OnChangeCheckbox(this, \'danzenghou\')">胆囊壁增厚性改变</label><label><input type="checkbox" name="CheckboxGroup4" value="checkbox" id="CheckboxGroup4_2" onClick="OnChangeCheckbox(this, \'danxirou\')">胆囊壁息肉样改变</label><label><input type="checkbox" name="CheckboxGroup4" value="checkbox" id="CheckboxGroup4_3" onClick="OnChangeCheckbox(this, \'danqiechu\')">胆囊术后</label><p id="danjieshi"></p><p id="danzenghou"></p><p id="danxirou"></p><p id="danqiechu"></p>肾脏异常项： <label><input type="checkbox" name="CheckboxGroup11" value="checkbox" id="CheckboxGroup11_0" onClick="OnChangeCheckbox(this, \'shenjieshi\')">肾结石</label><label><input type="checkbox" name="CheckboxGroup11" value="checkbox" id="CheckboxGroup11_1" onClick="OnChangeCheckbox(this, \'shennangzhong\')">肾脏囊肿</label><p id="shenjieshi"></p><p id="shennangzhong"></p>'
 };
 
-var result = {};
-
 function OnChangeCheckbox(checkbox, id) {
 	document.getElementById(id).innerHTML = checkbox.checked ? checkboxMsgMap[id] : "";
 }
 
 function generateCSV() {
-	var name = document.getElementById()
+	var name = document.getElementById("name").value;
+	var gender = document.getElementById("gender").value;
+	var age = document.getElementById("age").value;
+
+	var result = {
+		"姓名": name,
+		"性别": gender,
+		"年龄": age
+	};
 }
 
 //weight

@@ -11,19 +11,17 @@
 
 <h2 class="text-center">体检后有关问题的建议</h2>
 
-<form>
-
 <!-- basic info -->
-<div class="form-group">
+<div>
 	<label>姓名：</label> 
-	<input class="input-mini" type="text">
+	<input class="input-mini" id="name" type="text">
 	<label>性别：</label>
-	<input class="input-mini" type="text">
+	<input class="input-mini" id="gender" type="text">
 	<label>年龄： </label>
-	<input class="input-mini" type="text">
+	<input class="input-mini" id="age" type="text">
 </div>
 
-<div class="form-group">
+<div>
 	1. 您本次体检测体重指数：<input input class="input-mini" type="text" style="text-align:center;" id="weight" onkeydown="if (event.keyCode == 13) document.getElementById('btnWeight').click()" />
 		<span style="DISPLAY:none">
 			<button id="btnWeight" onclick="getWeight()">Try it</button>
@@ -163,12 +161,10 @@
   	<label>
     <input type="checkbox" name="CheckboxGroup_xz" value="checkbox" id="CheckboxGroup_xz_0">
     肝胆脾胰双肾未见异常</label>
-	
     
   	<label>
     <input type="checkbox" name="CheckboxGroup_xz" value="checkbox" id="CheckboxGroup_xz_1" onClick="OnChangeCheckbox(this, 'xzUn')">
     异常</label>
-    
 </div>
 <div><p id="xzUn"></p></div>
 
@@ -181,6 +177,7 @@ B超检查其他情况：<textarea class="input-xxlarge"></textarea>
 </div>
 
 <div>
+	<input class="btn btn-default" type="button" value="完成" onClick="generateCSV()">
 	<p class="text-right">青云职工医院</p>
 	<p class="text-right">
 		<script language="JavaScript" type="text/JavaScript">
@@ -194,6 +191,5 @@ B超检查其他情况：<textarea class="input-xxlarge"></textarea>
 	</p>
 </div>
 
-</form>
 </body>
 </html>
