@@ -6,3 +6,8 @@ input {
 	margin-left: 5px;
 	margin-right: 5px;
 }
+
+.basic-info div {
+	float: left;
+	margin-right: 50px;
+}

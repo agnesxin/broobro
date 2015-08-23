@@ -13,14 +13,13 @@
 <h2 class="text-center">体检后有关问题的建议</h2>
 
 <!-- basic info -->
-<div>
-	<label>姓名：</label> 
-	<input class="input-mini" id="name" type="text">
-	<label>性别：</label>
-	<input class="input-mini" id="gender" type="text">
-	<label>年龄： </label>
-	<input class="input-mini" id="age" type="text">
+<div class="basic-info">
+	<div>姓名：<input class="input-mini" id="name" type="text"></div>
+	<div>性别：<input class="input-mini" id="gender" type="text"></div>
+	<div>年龄：<input class="input-mini" id="age" type="text"></div>
 </div>
+
+<div style="clear:both;">
 
 <div>
 	1. 您本次体检测体重指数：<input input class="input-mini" type="text" style="text-align:center;" id="weight" onkeydown="if (event.keyCode == 13) document.getElementById('btnWeight').click()" />
