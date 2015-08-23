@@ -26,12 +26,46 @@ function generateCSV() {
 	var name = document.getElementById("name").value;
 	var gender = document.getElementById("gender").value;
 	var age = document.getElementById("age").value;
+	var weight = document.getElementById("weight").value;
+	var bldpressure = document.getElementById("bldpressure").value;
+	var bldsugar = document.getElementById("bldsugar").value;
+	var zongdgc = document.getElementById("zongdgc").value;
+	var gysz = document.getElementById("gysz").value;
+	var didgc = document.getElementById("didgc").value;
+	var gaodgc = document.getElementById("gaodgc").value;
+	var gbzam = document.getElementById("gbzam").value;
+	var fydb = $('input[id="fydbRadio"]:checked').val();
+	var niaosu = $('input[id="niaosuRadio"]:checked').val();
+	var jigan = $('input[id="jiganRadio"]:checked').val();
+	var jzx = $('input[id="jzxRadio"]:checked').val();
+	var xdt = $('input[id="xdtRadio"]:checked').val();
+	var xzUn = $('input[id="xzUnRadio"]:checked').val();
+	var bultrasound = $('textarea[id="bultrasound"]').val();
+	var others = $('textarea[id="others"]').val();
 
 	var result = {
-		"姓名": name,
-		"性别": gender,
-		"年龄": age
+		"name": name,
+		"gender": gender,
+		"age": age,
+		"weight": weight,
+		"bldpressure": bldpressure,
+		"bldsugar": bldsugar,
+		"zongdgc": zongdgc,
+		"gysz": gysz,
+		"didgc": didgc,
+		"gaodgc": gaodgc,
+		"gbzam": gbzam,
+		"fydb": fydb,
+		"niaosu": niaosu,
+		"jigan": jigan,
+		"jzx": jzx,
+		"xdt": xdt,
+		"xzUn": xzUn,
+		"bultrasound": bultrasound,
+		"others": others
 	};
+
+	console.log(result);
 }
 
 //weight
@@ -114,7 +148,7 @@ function getZongDGC() {
 	document.getElementById("zongdgcRes").innerHTML=res;
 }
 
-//甘油三酯
+//甘油三酯 
 function getGYSZ() {
 	var res;
 	var v=document.getElementById("gysz").value;
